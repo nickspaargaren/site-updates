@@ -7,6 +7,9 @@ RUN tar -zxvf gh_${VERSION}_linux_amd64.tar.gz
 RUN chmod a+x gh_${VERSION}_linux_amd64/bin/gh
 
 FROM alpine:latest
+RUN apk update
+RUN apk add git
+
 ARG VERSION=2.14.6
 COPY --from=gh gh_${VERSION}_linux_amd64/bin/gh /usr/bin/gh
 COPY .env .env
