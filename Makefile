@@ -1,14 +1,14 @@
 help: 
-	@docker run -it site-updates gh help
+	@docker run -it --rm site-updates gh help
 
 build:
 	@docker build -t site-updates .
 
 status:
-	@docker run -it site-updates gh status
+	@docker run -it --rm site-updates gh status
 
 version:
-	@docker run -it site-updates gh --version
+	@docker run -it --rm site-updates gh --version
 
 run:
-	@docker run -it site-updates
+	@docker run -it --rm site-updates
