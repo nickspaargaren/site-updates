@@ -24,8 +24,6 @@ update:
 	yarn upgrade --latest -y && \
 	cd frontend && \
 	yarn upgrade --latest -y && \
-	cd ../backend && \
-	yarn upgrade --latest -y && \
 	cd ../ && \
 	git add . && \
 	git commit -m 'Update dependencies' && \
