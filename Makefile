@@ -16,7 +16,7 @@ run:
 	@docker run -it --rm --env TOKEN=${TOKEN} site-updates 
 
 update:
-	@docker run -it --rm --env-file .env site-updates sh -c "gh repo clone ${GITHUB_REPO} && \
+	@docker run -it --rm site-updates sh -c "gh repo clone ${GITHUB_REPO} && \
 	cd ${GITHUB_REPO} && \
 	git config user.name '${GITHUB_USER_NAME}' && \
 	git config user.email '${GITHUB_USER_EMAIL}' && \
