@@ -1,5 +1,5 @@
 FROM alpine:latest as gh
-ARG VERSION=2.18.1
+ARG VERSION=2.19.0
 
 RUN apk --no-cache add wget tar
 RUN wget https://github.com/cli/cli/releases/download/v${VERSION}/gh_${VERSION}_linux_amd64.tar.gz
@@ -13,7 +13,7 @@ ENV TOKEN=$TOKEN
 RUN apk update
 RUN apk add --no-cache git make gcc g++ nodejs yarn
 
-ARG VERSION=2.18.1
+ARG VERSION=2.19.0
 COPY --from=gh gh_${VERSION}_linux_amd64/bin/gh /usr/bin/gh
 
 RUN echo ${TOKEN} > .env
