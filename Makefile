@@ -21,7 +21,6 @@ update:
 	git config user.name '${GITHUB_USER_NAME}' && \
 	git config user.email '${GITHUB_USER_EMAIL}' && \
 	git checkout -b update && \
-	yarn upgrade --latest -y && \
 	cd frontend && \
 	yarn upgrade --latest -y && \
 	cd ../ && \
