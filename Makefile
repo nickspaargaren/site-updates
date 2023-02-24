@@ -18,8 +18,8 @@ run:
 update:
 	@docker run -it --rm site-updates sh -c "gh repo clone ${GITHUB_REPO} && \
 	cd ${GITHUB_REPO} && \
-	git config user.name '${GITHUB_USER_NAME}' && \
-	git config user.email '${GITHUB_USER_EMAIL}' && \
+	git config user.name '$(shell git config user.name)' && \
+	git config user.email '$(shell git config user.email)' && \
 	git checkout -b update && \
 	cd frontend && \
 	yarn upgrade --latest -y && \
